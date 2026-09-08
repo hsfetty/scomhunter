@@ -6,3 +6,4 @@ msldap
 datetime
 impacket
 aiosmb
+pyspnego

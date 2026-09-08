@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Manifest>
+    <Identity>
+      <ID>SCOMHunter.CommandExecution</ID>
+      <Version>1.0.0.0</Version>
+    </Identity>
+    <Name>SCOMHunter.CommandExecution</Name>
+    <References>
+      <Reference Alias="System">
+        <ID>System.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="SC">
+        <ID>Microsoft.SystemCenter.Library</ID>
+        <Version>7.0.8433.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <Monitoring>
+    <Tasks>
+      <Task ID="SCOMHunter.CommandExecution.Task" Accessibility="Public" Enabled="true" Target="SC!Microsoft.SystemCenter.HealthService" Timeout="300" Remotable="true">
+        <Category>Custom</Category>
+        <WriteAction ID="Command" TypeID="System!System.CommandExecuter">
+          <ApplicationName>%SystemRoot%\System32\cmd.exe</ApplicationName>
+          <WorkingDirectory />
+          <CommandLine>/d /s /c echo SCOMHunter command task installed</CommandLine>
+          <TimeoutSeconds>300</TimeoutSeconds>
+          <RequireOutput>true</RequireOutput>
+        </WriteAction>
+      </Task>
+    </Tasks>
+  </Monitoring>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="SCOMHunter.CommandExecution">
+          <Name>SCOMHunter Command Execution</Name>
+        </DisplayString>
+        <DisplayString ElementID="SCOMHunter.CommandExecution.Task">
+          <Name>Execute cmd.exe command</Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPack>

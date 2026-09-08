@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import typer
-from lib.commands import find, mssql, http, dpapi, relay
+from lib.commands import find, mssql, http, dpapi, relay, postex
 from lib.scripts.banner import small_banner
 
 
@@ -43,6 +43,12 @@ app.add_typer(
     relay.app,
     name=relay.COMMAND_NAME,
     help=relay.HELP
+)
+
+app.add_typer(
+    postex.app,
+    name=postex.COMMAND_NAME,
+    help=postex.HELP
 )
 
 if __name__ == '__main__':

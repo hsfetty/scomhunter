@@ -40,11 +40,12 @@ Usage: scomhunter [OPTIONS] COMMAND [ARGS]...
 │ http    SCOM Web Console NTLM Relay Attack                                                │
 │ mssql   Convert provided sid to hex format and return MSSQL query                         |
 │ dpapi   Extract DPAPI Protected RunAs Credentials                                         │
+│ postex  Authenticated SCOM inventory and command execution                                │
 | relay   SCOM MSSQL NTLM Relay Attack - Manipulate SCOM admin role membership              │
 ╰───────────────────────────────────────────────────────────────────────────────────────────╯
 
 ```
+
 # References
 
 TBD
-
